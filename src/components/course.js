@@ -8,23 +8,21 @@ class Course extends React.Component {
       scheduled: false,
       expanded: false
     };
+    
+    this.handleClick = this.handleClick.bind(this);
+  }
+  
+  handleClick(event) {
+    this.props.select(1);
+    this.setState({ scheduled: true });
+    
   }
   
   render() {
-    const details = this.props.details;
-    if (this.state.scheduled) {
-      return (
-        <article className="scheduled">
-          <h2>{details.name}</h2>
-        </article>
-      );
-    } else if (this.state.expanded) {
-      return <article className="expanded">{details.name}</article>
-    }
     return (
-      <article className="list">
-        <h2>{details.name}</h2>
-        <button>+</button>
+      <article>
+        <h2>{this.props.details.name}</h2>
+        { (this.props.selected < 6) ? <button onClick={this.handleClick}>+</button> : null }
       </article>
     );
   }
