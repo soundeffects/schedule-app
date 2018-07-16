@@ -1,7 +1,8 @@
 import React from 'react';
 import _ from 'lodash';
 import courses from '../courses';
-import Course from './course'
+import Course from './course';
+import Scheduled from './scheduled';
 
 
 class App extends React.Component {
@@ -30,6 +31,7 @@ class App extends React.Component {
       <div className="App">
         <h1>Scheduler</h1>
         <main>
+          <Scheduled courses={this.state.selectedCourses}/>
           {courses.map(course => 
             <Course details={course} select={this.select} selectedCourses={this.state.selectedCourses}/> 
           )}
