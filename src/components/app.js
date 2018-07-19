@@ -38,8 +38,8 @@ class App extends React.Component {
         <h1>Scheduler</h1>
         <main>
           <Scheduled courses={this.state.selectedCourses}/>
-          {this.props.courses.map(course => 
-            <Course details={course} select={this.select} selectedCourses={this.state.selectedCourses}/> 
+          {this.props.courses.map((course, index) => 
+            <Course key={index} details={course} select={this.select} selectedCourses={this.state.selectedCourses}/> 
           )}
         </main>
       </div>

@@ -25,9 +25,9 @@ class Course extends React.Component {
   renderButton() {
     if(this.state.scheduled || this.props.selectedCourses.length < 6) {
       if (this.state.scheduled) {
-        return <button className="remove-course" onClick={this.handleClick}><i class="far fa-minus-square"></i></button>;
+        return <button className="remove-course" onClick={this.handleClick}><i className="far fa-minus-square"></i></button>;
       } else {
-        return <button className="add-course" onClick={this.handleClick}><i class="far fa-plus-square"></i></button>;
+        return <button className="add-course" onClick={this.handleClick}><i className="far fa-plus-square"></i></button>;
       }
     }
   }

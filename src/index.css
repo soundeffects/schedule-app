@@ -1,5 +1,6 @@
 body {
   background: white;
+  font-family: 'Montserrat', sans-serif;
 }
 
 h1 {
@@ -8,7 +9,10 @@ h1 {
 
 article {
   margin: 4px;
-  border: 1px solid gray;
+  border: 1px solid #eee;
+  -webkit-box-shadow: 1px 5px 10px -1px rgba(0,0,0,0.1);
+  -moz-box-shadow: 1px 5px 10px -1px rgba(0,0,0,0.1);
+  box-shadow: 1px 5px 10px -1px rgba(0,0,0,0.1);
   z-index: 10;
   background: white;
   width: 52vw;
@@ -35,7 +39,7 @@ h2:hover {
   color: #1b57b7;
 }
 
-button {
+article button {
   width: 28px;
 
   text-align: center;
@@ -50,17 +54,17 @@ button {
   transition: all 0.2s;
 }
 
-button:hover {
+article button:hover {
   color: black;
 }
 
-button:focus {
+article button:focus {
   color: #77bdff;
   outline: 0;
 }
 
 p {
-  margin: 4px;
+  margin: 10px;
   color: gray;
 }
 
@@ -84,6 +88,9 @@ section {
 
 .schedule-wrapper {
   margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 h3 {
@@ -91,9 +98,43 @@ h3 {
 }
 
 h4 {
-  border: 1px solid gray;
+  border: 1px solid #eee;
+  -webkit-box-shadow: 1px 5px 10px -1px rgba(0,0,0,0.1);
+  -moz-box-shadow: 1px 5px 10px -1px rgba(0,0,0,0.1);
+  box-shadow: 1px 5px 10px -1px rgba(0,0,0,0.1);
+  text-align: center;
   margin: 8px;
   font-weight: normal;
   padding: 4px;
   background: white;
+  width: 10em;
+}
+
+.empty {
+  background: none;
+  border: 1px dashed white;
+  color: white;
+  width: 10em;
+}
+
+form button {
+  margin-top: 20px;
+  padding: 10px;
+  background: #75aaff;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-weight: bold;
+  -webkit-box-shadow: 1px 5px 10px -1px rgba(0,0,0,0.1);
+  -moz-box-shadow: 1px 5px 10px -1px rgba(0,0,0,0.1);
+  box-shadow: 1px 5px 10px -1px rgba(0,0,0,0.1);
+  
+  transition: all 0.1s;
+}
+
+form button:hover {
+  background: #8cb6ff;
+  -webkit-box-shadow: 1px 5px 10px -1px rgba(0,0,0,0.2);
+  -moz-box-shadow: 1px 5px 10px -1px rgba(0,0,0,0.2);
+  box-shadow: 1px 5px 10px -1px rgba(0,0,0,0.2);
 }
