@@ -1,8 +1,10 @@
 import React from 'react';
 import _ from 'lodash';
-import courses from '../courses';
 import Course from './course';
 import Scheduled from './scheduled';
+
+import * as actions from '../actions';
+import { connect } from 'react-redux';
 
 
 class App extends React.Component {
@@ -11,7 +13,7 @@ class App extends React.Component {
     
     this.state = {
       selectedCourses: []
-    }
+    };
     
     this.select = this.select.bind(this);
   }
@@ -26,13 +28,17 @@ class App extends React.Component {
     this.setState({ selectedCourses });
   }
   
+  componentWillMount() {
+    this.props.fetchCourses();
+  }
+  
   render() {
     return (
       <div className="App">
         <h1>Scheduler</h1>
         <main>
           <Scheduled courses={this.state.selectedCourses}/>
-          {courses.map(course => 
+          {this.props.courses.map(course => 
             <Course details={course} select={this.select} selectedCourses={this.state.selectedCourses}/> 
           )}
         </main>
@@ -41,4 +47,8 @@ class App extends React.Component {
   }
 }
 
-export default App;
+function mapStateToProps(state) {
+  return { courses: state };
+}
+
+export default connect(mapStateToProps, actions)(App);

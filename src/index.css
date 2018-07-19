@@ -20,6 +20,7 @@ article:hover {
 
 header {
   display: flex;
+  align-items: center;
 }
 
 h2 {
@@ -42,17 +43,19 @@ button {
   
   font-weight: bold;
   font-size: 20px;
-  color: white;
+  color: gray;
+  
+  background: white;
   
   transition: all 0.2s;
 }
 
 button:hover {
-  background: #ccc;
+  color: black;
 }
 
 button:focus {
-  border: 1px solid #77bdff;
+  color: #77bdff;
   outline: 0;
 }
 
