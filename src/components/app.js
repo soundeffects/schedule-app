@@ -35,13 +35,15 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <h1>Scheduler</h1>
+        <section></section>
         <main>
-          <section></section>
-          <div className="courses-wrapper">
-            {this.props.courses.map((course, index) => 
-              <Course key={index} details={course} select={this.select} selectedCourses={this.state.selectedCourses}/> 
-            )}
+          <div className="positioning-wrapper">
+            <div className="courses-wrapper">
+              <h1>Scheduler</h1>
+              {this.props.courses.map((course, index) => 
+                <Course key={index} details={course} select={this.select} selectedCourses={this.state.selectedCourses}/> 
+              )}
+            </div>
           </div>
           <Scheduled courses={this.state.selectedCourses}/>
         </main>
