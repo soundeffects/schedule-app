@@ -37,10 +37,13 @@ class App extends React.Component {
       <div className="App">
         <h1>Scheduler</h1>
         <main>
+          <section></section>
+          <div className="courses-wrapper">
+            {this.props.courses.map((course, index) => 
+              <Course key={index} details={course} select={this.select} selectedCourses={this.state.selectedCourses}/> 
+            )}
+          </div>
           <Scheduled courses={this.state.selectedCourses}/>
-          {this.props.courses.map((course, index) => 
-            <Course key={index} details={course} select={this.select} selectedCourses={this.state.selectedCourses}/> 
-          )}
         </main>
       </div>
     );

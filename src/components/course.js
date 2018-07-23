@@ -1,5 +1,7 @@
 import React from 'react';
 
+import AnimateHeight from 'react-animate-height';
+
 class Course extends React.Component {
   constructor(props) {
     super(props);
@@ -25,23 +27,23 @@ class Course extends React.Component {
   renderButton() {
     if(this.state.scheduled || this.props.selectedCourses.length < 6) {
       if (this.state.scheduled) {
-        return <button className="remove-course" onClick={this.handleClick}><i className="far fa-minus-square"></i></button>;
+        return <button onClick={this.handleClick}><i className="far fa-minus-square"></i></button>;
       } else {
-        return <button className="add-course" onClick={this.handleClick}><i className="far fa-plus-square"></i></button>;
+        return <button onClick={this.handleClick}><i className="far fa-plus-square"></i></button>;
       }
     }
   }
   
   render() {
-    return (
-      <article>
-        <header>
-          <h2 onClick={this.expand}>{this.props.details.name}</h2>
-          { this.renderButton() }
-        </header>
-        { this.state.expanded ? <p>{ this.props.details.description }</p> : null }
-      </article>
-    );
+    return <article>
+        <AnimateHeight duration={200} height={this.state.expanded ? 'auto' : 30}>
+          <header>
+            <h2 onClick={this.expand}>{this.props.details.name}</h2>
+            { this.renderButton() }
+          </header>
+          { this.state.expanded ? <p>{ this.props.details.description }</p> : null }
+        </AnimateHeight>
+      </article>;
   }
 }
 
