@@ -39,7 +39,10 @@ class App extends React.Component {
         <main>
           <div className="positioning-wrapper">
             <div className="courses-wrapper">
-              <h1>Scheduler</h1>
+              <header>
+                <h1>Scheduler</h1>
+                <a href="https://github.com/soundeffects/schedule-app"><img src="https://image.flaticon.com/icons/svg/25/25231.svg"/></a>
+              </header>
               {this.props.courses.map((course, index) => 
                 <Course key={index} details={course} select={this.select} selectedCourses={this.state.selectedCourses}/> 
               )}
